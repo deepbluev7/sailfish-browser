@@ -177,7 +177,7 @@ SilicaControl {
             InverseMouseArea {
                 anchors.fill: menuShaderItem
                 enabled: popUpMenu.active
-                stealPress: true
+                stealPress: false
                 onPressedOutside: closed()
             }
         }

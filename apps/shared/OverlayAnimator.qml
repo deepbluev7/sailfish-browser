@@ -197,7 +197,6 @@ Item {
                 PropertyChanges {
                     target: overlay
                     y: webView.fullscreenHeight - overlay.toolBar.rowHeight
-                    enabled: false
                 }
             ]
         },

@@ -39,18 +39,6 @@ Rectangle {
         }
 
         Shared.IconButton {
-            id: shareButton
-            width: Theme.itemSizeLarge
-            icon.source: "image://theme/icon-m-share"
-            icon.opacity: enabled ? 1.0 : Theme.opacityLow
-            enabled: webView.contentItem
-            onTapped: {
-                overlay.toolBar.shareActivePage()
-                overlay.animator.showChrome()
-            }
-        }
-
-        Shared.IconButton {
             width: Theme.itemSizeLarge
             icon.source: overlay.toolBar.bookmarked ? "image://theme/icon-m-favorite-selected" : "image://theme/icon-m-favorite"
             icon.opacity: enabled ? 1.0 : Theme.opacityLow
@@ -76,6 +64,17 @@ Rectangle {
                 } else {
                     webView.reload()
                 }
+                overlay.animator.showChrome()
+            }
+        }
+
+        Shared.IconButton {
+            id: closeButton
+            width: Theme.itemSizeLarge
+            icon.source: "image://theme/icon-m-menu"
+            icon.opacity: enabled ? 1.0 : Theme.opacityLow
+            enabled: true
+            onTapped: {
                 overlay.animator.showChrome()
             }
         }
